@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class EmailController {
+    // Responsible for handling requests and returning responses
 
     private final EmailService emailService;
 

@@ -1,5 +1,6 @@
 type Query {
-    emails: [Email]
+    emails: [Email],
+    emailById(id: ID!): Email
 }
 
 type Email {

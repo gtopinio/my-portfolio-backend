@@ -1,8 +1,23 @@
 package com.github.gtopinio.myportfolio.email;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Email {
+    @Id
+    @SequenceGenerator(
+            name = "email_sequence",
+            sequenceName = "email_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "email_sequence"
+    )
+
     private Long id;
     private String senderEmail;
     private String senderName;
