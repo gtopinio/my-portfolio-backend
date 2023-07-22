@@ -1,0 +1,11 @@
+type Query {
+    emails: [Email]
+}
+
+type Email {
+    id: ID!
+    senderEmail: String!
+    senderName: String!
+    message: String!
+    date: String!
+}
