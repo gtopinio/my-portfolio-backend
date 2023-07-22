@@ -17,7 +17,6 @@ public class Email {
             strategy = GenerationType.SEQUENCE,
             generator = "email_sequence"
     )
-
     private Long id;
     private String senderEmail;
     private String senderName;
