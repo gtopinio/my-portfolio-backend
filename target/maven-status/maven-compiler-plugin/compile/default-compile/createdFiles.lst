@@ -1,7 +1,0 @@
-com\github\gtopinio\myportfolio\MyPortfolioApplication.class
-com\github\gtopinio\myportfolio\email\EmailService.class
-com\github\gtopinio\myportfolio\email\EmailController.class
-com\github\gtopinio\myportfolio\email\EmailConfig.class
-com\github\gtopinio\myportfolio\email\EmailController$EmailInput.class
-com\github\gtopinio\myportfolio\email\Email.class
-com\github\gtopinio\myportfolio\email\EmailRepository.class
