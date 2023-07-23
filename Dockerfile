@@ -1,4 +1,4 @@
-FROM bellsoft/liberica-runtime-container:jre-17-stream-musl
-EXPOSE 8080
-ADD target/my-portfolio-spring-boot.jar my-portfolio-spring-boot.jar
-ENTRYPOINT ["java","-jar","/my-portfolio-spring-boot.jar"]
+FROM openjdk:17-jdk-alpine
+ARG JAR_FILE=target/*.jar
+COPY ./target/my-portfolio-spring-boot.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
