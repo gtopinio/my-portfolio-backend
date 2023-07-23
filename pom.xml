@@ -15,6 +15,16 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
+		<!--suppress UnresolvedMavenProperty -->
+		<spring.datasource.url>${dbUrl}</spring.datasource.url>
+		<!--suppress UnresolvedMavenProperty -->
+		<spring.datasource.username>${dbUser}</spring.datasource.username>
+		<!--suppress UnresolvedMavenProperty -->
+		<spring.datasource.password>${dbPassword}</spring.datasource.password>
+		<!--suppress UnresolvedMavenProperty -->
+		<spring.mail.username>${email}</spring.mail.username>
+		<!--suppress UnresolvedMavenProperty -->
+		<spring.mail.password>${emailPassword}</spring.mail.password>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -64,6 +74,16 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.23.1-GA</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot-starter</artifactId>
+			<version>3.0.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -72,7 +92,19 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.github.ulisesbocchio</groupId>
+				<artifactId>jasypt-maven-plugin</artifactId>
+				<version>3.0.3</version>
+			</plugin>
 		</plugins>
+		<finalName>my-portfolio-spring-boot</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 
 </project>
