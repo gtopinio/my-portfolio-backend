@@ -7,6 +7,7 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 @Controller
 public class EmailController {
@@ -30,7 +31,7 @@ public class EmailController {
     }
 
     @MutationMapping
-    Email saveEmail(@Argument EmailInput email) {
+    CompletableFuture<Email> saveEmail(@Argument EmailInput email) {
         return this.emailService.saveEmail(email.senderEmail, email.senderName, email.message);
     }
 
