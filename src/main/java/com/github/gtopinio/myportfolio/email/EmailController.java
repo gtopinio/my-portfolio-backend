@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:4200")
 @Controller
 public class EmailController {
     // Responsible for handling requests and returning responses
