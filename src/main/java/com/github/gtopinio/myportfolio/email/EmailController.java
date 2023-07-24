@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
-@CrossOrigin(origins = "*")
 @Controller
+@CrossOrigin
 public class EmailController {
     // Responsible for handling requests and returning responses
 
