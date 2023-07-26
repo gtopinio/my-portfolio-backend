@@ -33,6 +33,20 @@ public class EmailService {
         return emailRepository.findById(id);
     }
 
+    public Optional<EmailController.DeleteEmailResponse> deleteEmail(Long id){
+        try {
+            Optional<Email> email = emailRepository.findById(id);
+            if (email.isPresent()) {
+                emailRepository.deleteById(id);
+                return Optional.of(new EmailController.DeleteEmailResponse(true, "Email deleted"));
+            } else {
+                return Optional.of(new EmailController.DeleteEmailResponse(false, "Email not found"));
+            }
+        } catch (Exception e) {
+            return Optional.of(new EmailController.DeleteEmailResponse(false, "Error in deleting email"));
+        }
+    }
+
     @Async
     public CompletableFuture<Email> saveEmail(String senderEmail, String senderName, String message) {
         // Validate input parameters

@@ -37,7 +37,14 @@ public class EmailController {
         return this.emailService.saveEmail(email.senderEmail, email.senderName, email.message);
     }
 
+    @MutationMapping
+    Optional<DeleteEmailResponse> deleteEmail(@Argument Long id) {
+        return this.emailService.deleteEmail(id);
+    }
+
     record EmailInput(String senderEmail, String senderName, String message) {
     }
 
+    record DeleteEmailResponse(Boolean success, String message) {
+    }
 }

@@ -5,6 +5,7 @@ type Query {
 
 type Mutation {
     saveEmail(email: EmailInput): Email
+    deleteEmail(id: ID!): DeleteEmailResponse
 }
 
 input EmailInput {
@@ -19,4 +20,9 @@ type Email {
     senderName: String!
     message: String!
     date: String!
+}
+
+type DeleteEmailResponse {
+    success: Boolean!
+    message: String
 }
