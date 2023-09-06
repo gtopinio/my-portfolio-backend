@@ -1,6 +1,7 @@
 package com.github.gtopinio.myportfolio.click;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,7 @@ public class ClickController {
     }
 
     @MutationMapping
-    CompletableFuture<Click> saveClick(ClickInput click) {
+    CompletableFuture<Click> saveClick(@Argument ClickInput click) {
         return this.clickService.saveClick(click.linkName);
     }
 
