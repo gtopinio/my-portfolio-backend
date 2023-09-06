@@ -1,11 +1,13 @@
 type Query {
     emails: [Email],
-    emailById(id: ID!): Email
+    emailById(id: ID!): Email,
+    clicks: [Click],
 }
 
 type Mutation {
     saveEmail(email: EmailInput): Email
     deleteEmail(id: ID!): DeleteEmailResponse
+    saveClick(click: ClickInput): Click
 }
 
 input EmailInput {
@@ -14,11 +16,21 @@ input EmailInput {
     message: String!
 }
 
+input ClickInput {
+    linkName: String!
+}
+
 type Email {
     id: ID!
     senderEmail: String!
     senderName: String!
     message: String!
+    date: String!
+}
+
+type Click {
+    id: ID!
+    linkName: String!
     date: String!
 }
 
