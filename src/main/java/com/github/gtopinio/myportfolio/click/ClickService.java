@@ -23,17 +23,21 @@ public class ClickService {
     }
 
     @Async
-    public CompletableFuture<Click> saveClick(String linkName) {
+    public CompletableFuture<Click> saveClick(String linkName, String ipAddress) {
         // Validate input parameters
         if (linkName == null || linkName.isEmpty()) {
             throw new IllegalArgumentException("Link name must not be null or empty");
+        }
+
+        if (ipAddress == null || ipAddress.isEmpty()) {
+            throw new IllegalArgumentException("IP address must not be null or empty");
         }
 
         // Get current date
         LocalDate date = LocalDate.now();
 
         // Save click
-        Click click = new Click(linkName, date);
+        Click click = new Click(linkName, ipAddress, date);
         clickRepository.save(click);
 
         // Return click

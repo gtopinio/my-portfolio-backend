@@ -24,24 +24,31 @@ public class Click {
     )
     private Long id;
     private String link;
+    private String ipAddress;
     private LocalDate date;
 
     public Click() {
     }
 
-    public Click(Long id, String link, LocalDate date) {
+    public Click(Long id, String link, String ipAddress, LocalDate date) {
         this.id = id;
         this.link = link;
+        this.ipAddress = ipAddress;
         this.date = date;
     }
 
-    public Click(String link, LocalDate date) {
+    public Click(String link, String ipAddress, LocalDate date) {
         this.link = link;
+        this.ipAddress = ipAddress;
         this.date = date;
     }
 
     public String getLink() {
         return link;
+    }
+
+    public String getIpAddress() {
+        return ipAddress;
     }
 
     public LocalDate getDate() {
@@ -50,6 +57,10 @@ public class Click {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
     }
 
     public void setDate(LocalDate date) {
@@ -61,6 +72,7 @@ public class Click {
         return "Click{" +
                 "id=" + id +
                 ", link='" + link + '\'' +
+                ", ipAddress='" + ipAddress + '\'' +
                 ", date=" + date +
                 '}';
     }

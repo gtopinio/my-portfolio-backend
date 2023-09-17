@@ -18,6 +18,7 @@ input EmailInput {
 
 input ClickInput {
     linkName: String!
+    ipAddress: String!
 }
 
 type Email {
@@ -31,6 +32,7 @@ type Email {
 type Click {
     id: ID!
     linkName: String!
+    ipAddress: String!
     date: String!
 }
 

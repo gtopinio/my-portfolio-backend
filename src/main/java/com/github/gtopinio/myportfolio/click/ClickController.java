@@ -28,9 +28,9 @@ public class ClickController {
 
     @MutationMapping
     CompletableFuture<Click> saveClick(@Argument ClickInput click) {
-        return this.clickService.saveClick(click.linkName);
+        return this.clickService.saveClick(click.linkName, click.ipAddress);
     }
 
-    record ClickInput(String linkName) {
+    record ClickInput(String linkName, String ipAddress) {
     }
 }
