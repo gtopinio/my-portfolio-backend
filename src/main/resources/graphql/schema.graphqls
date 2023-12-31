@@ -31,7 +31,7 @@ type Email {
 
 type Click {
     id: ID!
-    linkName: String!
+    linkName: String
     ipAddress: String!
     date: String!
 }
